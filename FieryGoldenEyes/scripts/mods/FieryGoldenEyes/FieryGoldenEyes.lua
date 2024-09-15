@@ -3,7 +3,7 @@ local Breeds = require("scripts/settings/breed/breeds")
 
 local settings = {}
 for breed_name, _ in pairs(Breeds) do
-    settings[#settings + 1] = mod:get(breed_name)
+    settings[breed_name] = mod:get(breed_name)
 end
 
 local outlined_units = {}
