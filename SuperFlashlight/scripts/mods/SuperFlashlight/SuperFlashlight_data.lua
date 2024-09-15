@@ -72,15 +72,15 @@ return {
                         decimals_number = 0
                     },
                     {
-                        setting_id    = "first_person_ies_profile",
-                        type          = "dropdown",
+                        setting_id = "first_person_ies_profile",
+                        type = "dropdown",
                         default_value = "",
                         options = {
-                            {text = "none",   value = ""},
-                            {text = "custom_01",   value = "content/environment/ies_profiles/narrow/flashlight_custom_01"},
-                            {text = "custom_02", value = "content/environment/ies_profiles/narrow/flashlight_custom_02"},
-                            {text = "custom_03",  value = "content/environment/ies_profiles/narrow/flashlight_custom_03"},
-                            {text = "narrow_05",  value = "content/environment/ies_profiles/narrow/narrow_05"}
+                            { text = "none", value = "" },
+                            { text = "custom_01", value = "content/environment/ies_profiles/narrow/flashlight_custom_01" },
+                            { text = "custom_02", value = "content/environment/ies_profiles/narrow/flashlight_custom_02" },
+                            { text = "custom_03", value = "content/environment/ies_profiles/narrow/flashlight_custom_03" },
+                            { text = "narrow_05", value = "content/environment/ies_profiles/narrow/narrow_05" }
                         },
                     },
                 }
@@ -151,15 +151,15 @@ return {
                         decimals_number = 0
                     },
                     {
-                        setting_id    = "third_person_ies_profile",
-                        type          = "dropdown",
+                        setting_id = "third_person_ies_profile",
+                        type = "dropdown",
                         default_value = "content/environment/ies_profiles/narrow/flashlight_custom_02",
                         options = {
-                            {text = "none",   value = ""},
-                            {text = "custom_01",   value = "content/environment/ies_profiles/narrow/flashlight_custom_01"},
-                            {text = "custom_02", value = "content/environment/ies_profiles/narrow/flashlight_custom_02"},
-                            {text = "custom_03",  value = "content/environment/ies_profiles/narrow/flashlight_custom_03"},
-                            {text = "narrow_05",  value = "content/environment/ies_profiles/narrow/narrow_05"}
+                            { text = "none", value = "" },
+                            { text = "custom_01", value = "content/environment/ies_profiles/narrow/flashlight_custom_01" },
+                            { text = "custom_02", value = "content/environment/ies_profiles/narrow/flashlight_custom_02" },
+                            { text = "custom_03", value = "content/environment/ies_profiles/narrow/flashlight_custom_03" },
+                            { text = "narrow_05", value = "content/environment/ies_profiles/narrow/narrow_05" }
                         },
                     },
                 }
@@ -263,6 +263,144 @@ return {
                         range = { 0, 1 },
                         decimals_number = 4
                     },
+                }
+            },
+            {
+                setting_id = "fov_light",
+                type = "group",
+                sub_widgets = {
+                    {
+                        setting_id = "fov_light_omni",
+                        type = "checkbox",
+                        default_value = false,
+                        sub_widgets = {
+                            {
+                                setting_id = "fov_light_omni_casts_shadows",
+                                type = "checkbox",
+                                default_value = true,
+                            },
+                            {
+                                setting_id = "fov_light_omni_spot_reflector",
+                                type = "checkbox",
+                                default_value = false,
+                            },
+                            {
+                                setting_id = "fov_light_omni_falloff_far",
+                                type = "numeric",
+                                default_value = 250,
+                                range = { 0, 1000 },
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_omni_falloff_near",
+                                type = "numeric",
+                                default_value = 250,
+                                range = { 0, 1000 },
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_omni_intensity",
+                                type = "numeric",
+                                default_value = 7.5,
+                                range = { 0, 20 },
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_omni_volumetric_intensity",
+                                type = "numeric",
+                                default_value = 0,
+                                range = { 0, 1 },
+                                decimals_number = 4
+                            },
+                            {
+                                setting_id = "fov_light_omni_color_temperature",
+                                type = "numeric",
+                                default_value = 8000,
+                                range = { 0, 10000 },
+                                decimals_number = 0
+                            },
+                        }
+                    },
+                    {
+                        setting_id = "fov_light_spot",
+                        type = "checkbox",
+                        default_value = false,
+                        sub_widgets = {
+                            {
+                                setting_id = "fov_light_spot_casts_shadows",
+                                type = "checkbox",
+                                default_value = true,
+                            },
+                            {
+                                setting_id = "fov_light_spot_spot_reflector",
+                                type = "checkbox",
+                                default_value = false,
+                            },
+                            {
+                                setting_id = "fov_light_spot_spot_angle_max",
+                                type = "numeric",
+                                default_value = 90,
+                                range = { 0, 179 },
+                                unit_text = "°",
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_spot_spot_angle_min",
+                                type = "numeric",
+                                default_value = 90,
+                                range = { 0, 179 },
+                                unit_text = "°",
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_spot_falloff_far",
+                                type = "numeric",
+                                default_value = 200,
+                                range = { 0, 300 },
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_spot_falloff_near",
+                                type = "numeric",
+                                default_value = 200,
+                                range = { 0, 300 },
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_spot_intensity",
+                                type = "numeric",
+                                default_value = 2,
+                                range = { 0, 20 },
+                                decimals_number = 2
+                            },
+                            {
+                                setting_id = "fov_light_spot_volumetric_intensity",
+                                type = "numeric",
+                                default_value = 0,
+                                range = { 0, 1 },
+                                decimals_number = 4
+                            },
+                            {
+                                setting_id = "fov_light_spot_color_temperature",
+                                type = "numeric",
+                                default_value = 8000,
+                                range = { 0, 10000 },
+                                decimals_number = 0
+                            },
+                            {
+                                setting_id = "fov_light_spot_ies_profile",
+                                type = "dropdown",
+                                default_value = "",
+                                options = {
+                                    { text = "none", value = "" },
+                                    { text = "custom_01", value = "content/environment/ies_profiles/narrow/flashlight_custom_01" },
+                                    { text = "custom_02", value = "content/environment/ies_profiles/narrow/flashlight_custom_02" },
+                                    { text = "custom_03", value = "content/environment/ies_profiles/narrow/flashlight_custom_03" },
+                                    { text = "narrow_05", value = "content/environment/ies_profiles/narrow/narrow_05" }
+                                },
+                            },
+                        }
+                    }
                 }
             }
         }
